@@ -130,7 +130,7 @@ set black(say.en.maxon.1) "\005\[BT\]\005 Time online: \002%msg.1% %msg.2% %msg.
 set black(say.en.stats.1) "\005\[BT\]\005 No stats informations found about \002%msg.1%\002."
 set black(say.en.stats.2) "\005\[BT\]\005 Today's \002Stats\002: (\001%msg.1%\001) Bans: \002%msg.2%\002 Kicks: \002%msg.3%\002 Cmds: %msg.6%"
 set black(say.en.stats.3) "\005\[BT\]\005 Total \002Stats\002: (\001%msg.1%\001) Bans: local \002%msg.2%\002 ; Kicks: \002%msg.3%\002 ; Cmds: %msg.6%"
-set black(say.en.stats.4) "\005\[BT\]\005 Total \002Stats\002: (\001%msg.1%\001) Bans: local \002%msg.2%\002 global \002%msg.3%\002 ; Kicks: \002%msg.4%\002 ; Cmds: %msg.10%" 
+set black(say.en.stats.4) "\005\[BT\]\005 Total \002Stats\002: (\001%msg.1%\001) Bans: local \002%msg.2%\002 global \002%msg.3%\002 ; Kicks: \002%msg.4%\002 ; Cmds: %msg.10%"
 set black(say.en.stats.5) "\005\[BT\]\005 Reset stats of \001%msg.1%\001 from \002%chan%\002."
 
 #############################################################################################################################
@@ -387,7 +387,7 @@ set black(say.en.reportchan) "\005\[BT\]\005 Added ban on \002%chan%\002 for hos
 set black(say.en.reportchan.1) "\005\[BT\]\005 \[\002%nick%\002\] added ban on \002%chan%\002 for host \002%banmask%\002 with reason: \002%reason%\002. Expires after: \002%bantime%\002."
 set black(say.en.backchan.1) "\005\[BT\]\005 Found \002%msg.1%\002 in \002%chan%\002's BanList matching \002%msg.2%\002."
 set black(say.en.reportchan.2) "\005\[BT\]\005 \[\002%nick%\002\] added Gag on \002%chan%\002 for host \002%banmask%\002 with reason: \002%reason%\002. Expires after: \002%bantime%\002."
-set black(say.en.reportchan.3) "\005\[BT\]\005 \[\002%nick%\002\] removed \002%msg.1%\002 bans (\002%msg.2%\002 found) from %chan% that matched %msg.3%" 
+set black(say.en.reportchan.3) "\005\[BT\]\005 \[\002%nick%\002\] removed \002%msg.1%\002 bans (\002%msg.2%\002 found) from %chan% that matched %msg.3%"
 set black(say.en.reportchan.4) "\005\[BT\]\005 \[\002%nick%\002\] removed Gag on \002%chan%\002 for host \002%banmask%\002"
 
 ################################ CloneScan ###################################
@@ -714,7 +714,7 @@ set black(say.en.vr.5) "Infected/eXploited with a worm/virus, please clean your 
 
 set black(say.en.bot.5) "Possible BOT"
 set black(say.en.bot.6) "For unban use: \002/msg %botnick% unbanme %chan% %msg%\002"
-set black(say.en.bot.7) "Congratulations! Your ban from \002%chan%\002 has been removed. You can now rejoin!" 
+set black(say.en.bot.7) "Congratulations! Your ban from \002%chan%\002 has been removed. You can now rejoin!"
 set black(say.en.bot.8) "If *HUMAN* -> \002/msg %botnick% unbanme %chan%\002"
 
 ################################## b #####################################
@@ -773,22 +773,22 @@ set black(say.en.k.5)  {"Sorry, please rejoin so I can kick you again"
 
 ################################# Gag ######################################
 
-set black(say.en.gag.1) "- ATTENTION - \002%gag%\002 still needs to serve a \001%minute%\001 penance for breaking the channel rules. Enjoy the sound of silence :-)"
+set black(say.en.gag.1) "- ATTENTION - \002%gag%\002 still needs to serve a \001%minute%\001 penance for being gagged. Enjoy the sound of silence :-)"
 set black(say.en.gag.2) "\005\[BT\]\005 *** END GAGList ***"
 set black(say.en.gag.3) "\005\[BT\]\005 \002%msg.1%\002 has already GAGged on \001%chan%\001."
 set black(say.en.gag.4) "\005\[BT\]\005 \002%msg.1%\002 is already Banned on \001%chan%\001."
 set black(say.en.gag.5) "- ATTENTION - \002%nick%\002 can now type again on \002%chan%\002."
 set black(say.en.gag.6) "N/A"
 set black(say.en.gag.7) "\005\[BT\]\005 The maximum \002GAG duration\002 for your access level is \0017d\001 (20160 minutes)"
-set black(say.en.gag.10) "\005\[BT\]\005 You have been silenced on \002%chan%\002 for \001%time%\001 because you are violating the channel \002rules\002."
-set black(say.en.gag.11) "- ATTENTION - \002%gagger%\002 will be unable to type in \002%chan%\002 for \001%time%\001 because broke the channel \002rules\002."
+set black(say.en.gag.10) "\005\[BT\]\005 You have been silenced on \002%chan%\002 for \001%time%\001."
+set black(say.en.gag.11) "- ATTENTION - \002%gagger%\002 will be unable to type in \002%chan%\002 for \001%time%\001."
 
 ################################# unGag #####################################
 
 set black(say.en.ungag.5) "\005\[BT\]\005 There is no GAG for \001%msg.1%\001 on \002%chan%\002."
 set black(say.en.ungag.6) "\005\[BT\]\005 Removed GAG for \001%msg.1%\001 on \002%chan%\002."
-set black(say.en.ungag.7) "Now you can type again on \002%chan%\002. Please be more careful and do NOT break again the channel \002rules\002."
-set black(say.en.ungag.8) "- ATTENTION - \002%gagger%\002 can now type again on %chan%."
+set black(say.en.ungag.7) "Now you can type again on \002%chan%\002."
+set black(say.en.ungag.8) "- ATTENTION - \002%gagger%\002 can now type again."
 
 ################################ bw #########################################
 
@@ -813,7 +813,7 @@ set black(say.en.sb.12) "\005\[BT\]\005 \[\002BAN COMMENT\002\] %msg%"
 
 set black(say.en.stick.5) "Sticky ban"
 
-################################## BanList ##################################### 
+################################## BanList #####################################
 
 set black(say.en.banlist.1) "Permanent"
 set black(say.en.banlist.2) "\005\[BT\]\005 \[CHAN\]: * (\002%msg.1%\002 bans found)"
@@ -959,7 +959,7 @@ set black(say.en.jump.1) "\005\[BT\]\005 Changing server to: %msg%"
 ################################### Die #######################################
 
 set black(say.en.die.1) "\005\[BT\]\005 Suicide committed.."
-set black(say.en.die.2) "\005\[BT\]\005 ** BOOM ** This BlackTools eggdrop was terminated.." 
+set black(say.en.die.2) "\005\[BT\]\005 ** BOOM ** This BlackTools eggdrop was terminated.."
 
 ################################### Nick #####################################
 
@@ -983,7 +983,7 @@ set black(say.en.delchan.5) "\005\[BT\]\005 Unable to delete the channel \001%ms
 ################################### Suspend ##################################
 
 set black(say.en.suspend.2) "\005\[BT\]\005 Channel \002%chan%\002 was suspended by \001%hand%\001 with the reason: \002%reason%\002"
-set black(say.en.suspend.3) "\005\[BT\]\005 \002%msg.1%\002 is already suspend." 
+set black(say.en.suspend.3) "\005\[BT\]\005 \002%msg.1%\002 is already suspend."
 set black(say.en.suspend.4) "\005\[BT\]\005 Channel \002%msg.1%\002 is now suspended."
 
 ################################### unSuspend ##################################
@@ -1061,7 +1061,7 @@ set black(say.en.info.9) "\005\[BT\]\005 ** GLOBAL SUSPENDED ** - Expires in \00
 set black(say.en.info.10) "\005\[BT\]\005 \[Last ONLINE seen\] \001%msg.1%\001 in: \002%msg.2%\002"
 set black(say.en.info.11) "\005\[BT\]\005 \[USER\] \002%msg.1%\002"
 set black(say.en.info.12) "\005\[BT\]\005 Found (%msg.1%) records: \002%msg.8%\002."
-set black(say.en.info.13) "\005\[BT\]\005 Found (%msg.1%) records. Please restrict your search." 
+set black(say.en.info.13) "\005\[BT\]\005 Found (%msg.1%) records. Please restrict your search."
 set black(say.en.info.14) "\005\[BT\]\005 For more info about the right one, type \002%char%info <user>\002"
 set black(say.en.info.15) "\005\[BT\]\005 \[CHAN\] \002%msg.1%\002 -- modes: \002%msg.8%\002"
 set black(say.en.info.16) "\005\[BT\]\005 \[MANAGER\] \002%msg%\002"
