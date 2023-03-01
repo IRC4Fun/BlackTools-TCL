@@ -18,7 +18,7 @@ proc gag:process {gagger time reason nick hand host chan chan1 type} {
 global botnick black
 	set cmd_status [btcmd:status $chan $hand "gag" 0]
 if {$cmd_status == "1"} {
-	return 
+	return
 }
 if {[matchattr $hand q]} { blacktools:tell $nick $host $hand $chan $chan1 gl.glsuspend none
 	return
@@ -80,8 +80,8 @@ if {[isop $gagger $chan]} {
 	return
 }
 if {[onchan $gagger $chan]} {
-    set mask [return_mask [return_host_num $cmd $chan [getchanhost $gagger $chan]] [getchanhost $gagger $chan] $gagger] 
-} else { 
+    set mask [return_mask [return_host_num $cmd $chan [getchanhost $gagger $chan]] [getchanhost $gagger $chan] $gagger]
+} else {
 	set mask ""
 }
 
@@ -104,7 +104,7 @@ if {$return_time == "-1"} {
 	set return_time $black(gag_time)
 }
 	set return_time [time_return_minute $return_time]
-	
+
 if {$mask == ""} {
 	blacktools:tell $nick $host $hand $chan $chan1 gl.usernotonchan $show_gagger
 	return
@@ -135,12 +135,12 @@ if {$getlang == ""} { set getlang "[string tolower $black(default_lang)]" }
 	set gag_chan_message [string map [array get replace] $reply2]
 	putserv "PRIVMSG $chan :$gag_chan_message"
 	putserv "PRIVMSG $gagger :$gag_user_message"
-	pushmode $chan +b $mask
+	pushmode $chan +b m:$mask
 	set num [blacktools:ban:find_id]
 	blacktools:addban $nick $mask $hand $chan $chan1 $return_time "GAG" "0" "0" $show_reason "0" "" "" "" 0 $num
 
 	set backchan [join [setting:get $chan backchan]]
-if {$backchan == ""} { 
+if {$backchan == ""} {
 	return
 }
 if {!([validchan $backchan]) || !([onchan $botnick $backchan])} {
@@ -149,7 +149,7 @@ if {!([validchan $backchan]) || !([onchan $botnick $backchan])} {
 	set bantime [time_return_minute $return_time]
 	set bantime [expr $bantime * 60]
 	set expire [return_time_2 $getlang $bantime]
-if {$reason == ""} { set reason "N/A" }	
+if {$reason == ""} { set reason "N/A" }
 	set replace(%banmask%) $mask
 	set replace(%bantime%) $expire
 	set replace(%reason%) $reason
@@ -195,7 +195,7 @@ if {![validchan $chan]} {
 	foreach g [blacktools:gaglist $chan] {
 	set read_host [lindex [split $g] 3]
 if {[string match -nocase $read_host $host]} {
-		pushmode $chan -b $read_host
+		pushmode $chan -b m:$read_host
 		}
 	}
 }
@@ -205,8 +205,8 @@ if {[string match -nocase $read_host $host]} {
 proc ungag:process {gagger nick hand host chan chan1 type} {
 	global black botnick
 	set cmd_status [btcmd:status $chan $hand "ungag" 0]
-if {$cmd_status == "1"} { 
-	return 
+if {$cmd_status == "1"} {
+	return
 }
 if {[matchattr $hand q]} { blacktools:tell $nick $host $hand $chan $chan1 gl.glsuspend none
 	return
@@ -236,7 +236,7 @@ if {![validchan $chan]} {
 	return
 }
 if {[onchan $gagger $chan]} {
-	 set mask [return_mask [return_host_num "gag" $chan [getchanhost $gagger $chan]] [getchanhost $gagger $chan] $gagger] 
+	 set mask [return_mask [return_host_num "gag" $chan [getchanhost $gagger $chan]] [getchanhost $gagger $chan] $gagger]
 } else {
 	blacktools:tell $nick $host $hand $chan $chan1 gl.usernotonchan $show_gagger
 	return
@@ -248,7 +248,7 @@ if {[blacktools:isgag $mask $chan] == "0"} {
 } else {
 	blacktools:delban $mask $chan "0" "1"
 if {[ischanban $mask $chan]} {
-	pushmode $chan -b $mask
+	pushmode $chan -b m:$mask
 }
 	set replace(%chan%) $chan
 	set replace(%gagger%) $gagger
@@ -262,7 +262,7 @@ if {[ischanban $mask $chan]} {
 	putserv "PRIVMSG $gagger :$ungag_user_message"
 	putserv "PRIVMSG $chan :$ungag_chan_message"
 	set backchan [join [setting:get $chan backchan]]
-if {$backchan == ""} { 
+if {$backchan == ""} {
 	return
 }
 if {!([validchan $backchan]) || !([onchan $botnick $backchan])} {
@@ -286,7 +286,7 @@ if {$check_gag == "1"} {
 foreach user [chanlist $chan] {
 	set gethost "$nick![getchanhost $user $chan]"
 if {[string match -nocase $gethost $bans] || [string match -nocase $bans $gethost]} {
-	pushmode $chan +b $bans
+	pushmode $chan +b m:$bans
 			}
 		}
 	}
